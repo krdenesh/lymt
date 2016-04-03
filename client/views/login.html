@@ -1,0 +1,26 @@
+<section data-ng-controller="userController" class="row">
+  <div class="col-sm-8">
+    <h3>Login Page </h3>
+
+    <form name="loginform">
+      <div class="form-group">
+        <label class="control-label" for="email">email</label>
+        <input class= "form-control" id="email" type="text" required data-ng-model="user.username">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="password">password</label>
+        <input class= "form-control" id="password" type="password" required data-ng-model="user.password">
+      </div>
+      <div class="form-group">
+         <button class="btn btn-default" data-ng-click="login(user)">LOGIN</button>
+      </div> 
+    </form>
+      <br>
+      <div data-ng-if="errorhidden" class= "alert alert-danger">
+        <p>{{message}}</p>
+      </div> 
+
+  </div>
+  
+ 
+</section>

@@ -1,0 +1,51 @@
+<section data-ng-controller="caseController" class="row">
+  <div class="col-sm-8">
+    <h3>New Case</h3>
+    <div data-ng-if="errorhidden" class= "alert alert-success">
+          <p>{{message}}</p>
+    </div> 
+    <form name="newCaseForm">
+      <div class="form-group">
+        <label class="control-label" for="fname">First Name</label>
+        <input class= "form-control" id="fname" type="text" required data-ng-model="newCase.first_name">
+      </div>
+       <div class="form-group">
+        <label class="control-label" for="lname">Last Name</label>
+        <input class= "form-control" id="lname" type="text" required data-ng-model="newCase.last_name">
+      </div>
+
+      <div class="input-group date" data-provide="datepicker">
+        <label class="control-label" for="age">Birth Date</label>
+        <input class= "form-control" id="age" type="text" required data-ng-model="newCase.dbo"> 
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label" for="amount">Amount</label>
+        <input class= "form-control" id="amount" type="text" required data-ng-model="newCase.amount">
+      </div>
+
+      <div class="input-group date" data-provide="datepicker">
+        <label class="control-label" for="due_date">Due Date</label>
+        <input class= "form-control" id="due_date" type="text" required data-ng-model="newCase.due_date"> 
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="details">Education details</label>
+        <textarea rows="5" cols="80" class= "form-control" id="details" type="text" required data-ng-model="newCase.details"> </textarea> 
+      </div>
+      <div class="form-group">
+        <input type="file" name="Upload Documents" id="myFile">  
+      </div>
+        <div class="form-group">
+        <button class="btn btn-default" data-ng-click="save_case(newCase)">New Case</button>  
+      </div>    
+    </form>
+  </div>
+  
+</section>

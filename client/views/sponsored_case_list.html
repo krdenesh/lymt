@@ -1,0 +1,22 @@
+<div data-ng-controller="caseController" data-ng-init="sponsored_case_list()">
+	
+  <h4> Thank you for sponsoring the below cases </h4>
+  <table class="table table-striped pagination" >
+
+       <tr>
+         <th> No. </th>
+         <th> Applicant Details </th>
+         <th> Education Details</th>
+         <th> Amount</th>
+         <th> View Documents</th>
+       </tr>
+
+       <tr data-ng-repeat="case in cases" >
+         <td> {{$index+1}} </td>
+         <td> {{case.first_name + " " + case.last_name}}</td>
+         <td> {{case.details}}</td>
+         <td> {{case.amount}}</td>
+         <td> <button class="btn btn-success"  data-ng-click="view_receipts(case.id)">View Documents</button> </a></td>
+       </tr> 
+     </table> 	
+</div>

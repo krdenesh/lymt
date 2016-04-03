@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js">
+	<link rel="stylesheet" type="text/css" href="./views/css/lymt_custom_style.css">
+	<title>LYMT</title>
+
+</head>
+<body data-ng-app="lymtApp">
+	<div data-ng-controller="userController" class = "container">
+		<header>
+			<div class="row">
+				<h2 class="col-lg-12 col-centered"> <a href="#/"> Light Your Mind Trust</a> </h2>
+			</div>
+			
+			<nav class="navbar navbar-default">
+
+				<ul class="nav navbar-nav">
+					<li><a href="#/">Home</a></li>
+					<li><a href="#/help_now">Help Now</a></li>
+					<li><a href="#/urgent_need">Urgent Needs</a></li>
+				<li><a href="#/success_stories"> Success Stories</a></li> 
+				</ul> 
+			</nav>  
+		</header>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="list-group">					
+					<a href="#/login" class="list-group-item" ng-if="!loginStatus"> Login </a>
+					<a href="#/register" class="list-group-item"> Register </a>
+					<a href="#/logout" class="list-group-item" ng-if="loginStatus"> Logout </a>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<main data-ng-view></main> 
+			</div>
+
+		</div>
+	</div>
+  <script src="bundle.js"></script>
+</body>
+</html>

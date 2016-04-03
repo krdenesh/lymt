@@ -1,0 +1,47 @@
+Drop table USER_INFOS;
+drop table ORGANIZATION_INFOS;
+
+CREATE TABLE USER_INFOS (
+    id      SERIAL,
+    user_name    varchar(100) ,
+    user_email    varchar(120) unique , 
+    user_password varchar(100), 
+    is_org_flag boolean,
+    "updatedAt" date, 
+    "createdAt" date
+);
+
+
+ CREATE TABLE ORGANIZATION_INFOS (
+    id      SERIAL,
+    user_id    varchar(100) ,
+    org_name varchar(120), 
+    "updatedAt" date, 
+    "createdAt" date
+);
+CREATE TABLE CASE_INFOS (
+    id    SERIAL ,
+    first_name varchar(120), 
+    last_name varchar(120), 
+    dob date,     
+    amount integer, 
+    due_date date,
+    details varchar(120),
+    approved boolean, 
+    sponsored boolean, 
+    "updatedAt" date, 
+    "createdAt" date
+);
+  
+CREATE TABLE SPONSORED_CASE_INFOS(
+    id SERIAL, 
+    user_email varchar(120), 
+    case_id integer, 
+    pay_id varchar(200) UNIQUE,
+    "updatedAt" date, 
+    "createdAt" date
+);
+
+
+
+ 
